@@ -91,7 +91,6 @@ namespace HenryMod.Modules.Survivors
             Modules.Skills.CreateSkillFamilies(bodyPrefab);
             string prefix = HenryPlugin.DEVELOPER_PREFIX;
 
-            #region Primary
             //Creates a skilldef for a typical primary 
             SkillDef primarySkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo(prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME",
                                                                                       prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION",
@@ -102,9 +101,7 @@ namespace HenryMod.Modules.Survivors
 
 
             Modules.Skills.AddPrimarySkills(bodyPrefab, primarySkillDef);
-            #endregion
 
-            #region Secondary
             SkillDef shootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_HENRY_BODY_SECONDARY_GUN_NAME",
@@ -131,9 +128,7 @@ namespace HenryMod.Modules.Survivors
             });
 
             Modules.Skills.AddSecondarySkills(bodyPrefab, shootSkillDef);
-            #endregion
 
-            #region Utility
             SkillDef rollSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_HENRY_BODY_UTILITY_ROLL_NAME",
@@ -159,9 +154,7 @@ namespace HenryMod.Modules.Survivors
             });
 
             Modules.Skills.AddUtilitySkills(bodyPrefab, rollSkillDef);
-            #endregion
 
-            #region Special
             SkillDef bombSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_HENRY_BODY_SPECIAL_BOMB_NAME",
@@ -187,7 +180,6 @@ namespace HenryMod.Modules.Survivors
             });
 
             Modules.Skills.AddSpecialSkills(bodyPrefab, bombSkillDef);
-            #endregion
         }
         
         public override void InitializeSkins()
@@ -199,7 +191,6 @@ namespace HenryMod.Modules.Survivors
 
             List<SkinDef> skins = new List<SkinDef>();
 
-            #region DefaultSkin
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(HENRY_PREFIX + "DEFAULT_SKIN_NAME",
                 Assets.mainAssetBundle.LoadAsset<Sprite>("texMainSkin"),
@@ -215,10 +206,8 @@ namespace HenryMod.Modules.Survivors
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
-            #endregion
             
             //uncomment this when you have a mastery skin
-            #region MasterySkin
             /*
             //creating a new skindef as we did before
             SkinDef masterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.DEVELOPER_PREFIX + "_HENRY_BODY_MASTERY_SKIN_NAME",
@@ -253,7 +242,6 @@ namespace HenryMod.Modules.Survivors
 
             skins.Add(masterySkin);
             */
-            #endregion
 
             skinController.skins = skins.ToArray();
         }

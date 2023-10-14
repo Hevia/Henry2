@@ -12,7 +12,6 @@ namespace HenryMod.Modules
 {
     internal static class Assets
     {
-        #region henry's stuff
         // particle effects
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
@@ -21,7 +20,6 @@ namespace HenryMod.Modules
 
         // networked hit sounds
         internal static NetworkSoundEventDef swordHitSoundEvent;
-        #endregion
 
         // the assetbundle to load assets from
         internal static AssetBundle mainAssetBundle;

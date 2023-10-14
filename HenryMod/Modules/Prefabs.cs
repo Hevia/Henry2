@@ -50,7 +50,6 @@ namespace HenryMod.Modules {
                     modelBaseTransform = AddCharacterModelToSurvivorBody(newBodyPrefab, model.transform, bodyInfo);
             }
 
-            #region CharacterBody
             CharacterBody bodyComponent = newBodyPrefab.GetComponent<CharacterBody>();
             //identity
             bodyComponent.name = bodyInfo.bodyName;
@@ -122,7 +121,6 @@ namespace HenryMod.Modules {
             bodyComponent.hullClassification = HullClassification.Human;
 
             bodyComponent.isChampion = false;
-            #endregion
 
             SetupCameraTargetParams(newBodyPrefab, bodyInfo);
             SetupModelLocator(newBodyPrefab, modelBaseTransform, model.transform);
@@ -149,7 +147,6 @@ namespace HenryMod.Modules {
             Modules.Content.AddMasterPrefab(newMaster);
         }
 
-        #region ModelSetup
 
         private static Transform AddCharacterModelToSurvivorBody(GameObject bodyPrefab, Transform modelTransform, BodyInfo bodyInfo) 
         {
@@ -250,9 +247,7 @@ namespace HenryMod.Modules {
 
             characterModel.baseRendererInfos = rendererInfos.ToArray();
         }
-        #endregion
 
-        #region ComponentSetup
         private static void SetupCharacterDirection(GameObject prefab, Transform modelBaseTransform, Transform modelTransform)
         {
             if (!prefab.GetComponent<CharacterDirection>())
@@ -414,7 +409,6 @@ namespace HenryMod.Modules {
             hitBoxGroup.groupName = hitboxName;
         }
 
-        #endregion ComponentSetup
     }
 
     // for simplifying rendererinfo creation

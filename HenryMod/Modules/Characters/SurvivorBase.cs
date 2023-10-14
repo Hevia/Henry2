@@ -72,7 +72,6 @@ namespace HenryMod.Modules.Survivors
             Modules.Content.AddSurvivorDef(survivorDef);
         }
 
-        #region CharacterSelectSurvivorPreviewDisplayController
         protected virtual void AddCssPreviewSkill(int indexFromEditor, SkillFamily skillFamily, SkillDef skillDef)
         {
             CharacterSelectSurvivorPreviewDisplayController CSSPreviewDisplayConroller = displayPrefab.GetComponent<CharacterSelectSurvivorPreviewDisplayController>();
@@ -123,6 +122,5 @@ namespace HenryMod.Modules.Survivors
 
             CSSPreviewDisplayConroller.skillChangeResponses = newlist.ToArray();
         }
-        #endregion
     }
 }

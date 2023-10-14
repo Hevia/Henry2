@@ -10,7 +10,6 @@ namespace HenryMod.Modules.Characters
         {
             //paste all your displays here
             //sotv item displays not added yet. you can add them yourself from DLC1Content if you like. I believe in ya
-            #region Item Displays
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
                 keyAsset = RoR2Content.Equipment.Jetpack,
@@ -2621,7 +2620,6 @@ localScale = new Vector3(0.1233F, 0.1233F, 0.1233F),
                     }
                 }
             });
-            #endregion
         }
     }
 }

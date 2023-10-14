@@ -46,7 +46,6 @@ namespace HenryMod.Modules
 
         private static void PopulateCustomLightningArm()
         {
-            #region IgnoreThisAndRunAway
             //seriously you don't need this
             //I see you're still here, well if you do need this here's what you do
             //but again you don't need this
@@ -62,7 +61,6 @@ namespace HenryMod.Modules
             limbMatcher.limbPairs[2].targetChildLimb = "LightningArmEnd";
 
             itemDisplayPrefabs["displaylightningarmcustom"] = display;
-            #endregion
         }
 
         public static GameObject LoadDisplay(string name) {
