@@ -15,5 +15,15 @@ namespace HenryMod.Modules
         internal const float gunDamageCoefficient = 4.2f;
 
         internal const float bombDamageCoefficient = 16f;
+
+        // Rename stuff here
+        internal const string prefabBodyName = "Henry";
+        internal const string MODUID = "com.rob.HenryMod";
+        internal const string MODNAME = "HenryMod";
+        internal const string MODVERSION = "1.0.0";
+        internal const string DEVELOPER_PREFIX = "ROB";
+        internal const string assetbundleName = "myassetbundle";
+        internal const string soundBnkName = "HenryBank.bnk";
+        internal const string characterBodyPrefix = "_HENRY_BODY_";
     }
 }

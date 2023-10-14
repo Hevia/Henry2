@@ -12,9 +12,9 @@ namespace HenryMod.Modules.Survivors
     {
         //used when building your character using the prefabs you set up in unity
         //don't upload to thunderstore without changing this
-        public override string prefabBodyName => "Henry";
+        public override string prefabBodyName => Modules.StaticValues.prefabBodyName;
 
-        public const string HENRY_PREFIX = HenryPlugin.DEVELOPER_PREFIX + "_HENRY_BODY_";
+        public const string HENRY_PREFIX = Modules.StaticValues.DEVELOPER_PREFIX + Modules.StaticValues.characterBodyPrefix;
 
         //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => HENRY_PREFIX;
@@ -92,8 +92,8 @@ namespace HenryMod.Modules.Survivors
             string prefix = HenryPlugin.DEVELOPER_PREFIX;
 
             //Creates a skilldef for a typical primary 
-            SkillDef primarySkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo(prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME",
-                                                                                      prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION",
+            SkillDef primarySkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo(prefix + $"{Modules.StaticValues.characterBodyPrefix}PRIMARY_SLASH_NAME",
+                                                                                      prefix + $"{Modules.StaticValues.characterBodyPrefix}PRIMARY_SLASH_DESCRIPTION",
                                                                                       Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"),
                                                                                       new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)),
                                                                                       "Weapon",
@@ -104,9 +104,9 @@ namespace HenryMod.Modules.Survivors
 
             SkillDef shootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_HENRY_BODY_SECONDARY_GUN_NAME",
-                skillNameToken = prefix + "_HENRY_BODY_SECONDARY_GUN_NAME",
-                skillDescriptionToken = prefix + "_HENRY_BODY_SECONDARY_GUN_DESCRIPTION",
+                skillName = prefix + $"{Modules.StaticValues.characterBodyPrefix}SECONDARY_GUN_NAME",
+                skillNameToken = prefix + $"{Modules.StaticValues.characterBodyPrefix}SECONDARY_GUN_NAME",
+                skillDescriptionToken = prefix + $"{Modules.StaticValues.characterBodyPrefix}SECONDARY_GUN_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shoot)),
                 activationStateMachineName = "Slide",
@@ -131,9 +131,9 @@ namespace HenryMod.Modules.Survivors
 
             SkillDef rollSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_HENRY_BODY_UTILITY_ROLL_NAME",
-                skillNameToken = prefix + "_HENRY_BODY_UTILITY_ROLL_NAME",
-                skillDescriptionToken = prefix + "_HENRY_BODY_UTILITY_ROLL_DESCRIPTION",
+                skillName = prefix + $"{Modules.StaticValues.characterBodyPrefix}UTILITY_ROLL_NAME",
+                skillNameToken = prefix + $"{Modules.StaticValues.characterBodyPrefix}UTILITY_ROLL_NAME",
+                skillDescriptionToken = prefix + $"{Modules.StaticValues.characterBodyPrefix}UTILITY_ROLL_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texUtilityIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Roll)),
                 activationStateMachineName = "Body",
@@ -157,9 +157,9 @@ namespace HenryMod.Modules.Survivors
 
             SkillDef bombSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_HENRY_BODY_SPECIAL_BOMB_NAME",
-                skillNameToken = prefix + "_HENRY_BODY_SPECIAL_BOMB_NAME",
-                skillDescriptionToken = prefix + "_HENRY_BODY_SPECIAL_BOMB_DESCRIPTION",
+                skillName = prefix + $"{Modules.StaticValues.characterBodyPrefix}SPECIAL_BOMB_NAME",
+                skillNameToken = prefix + $"{Modules.StaticValues.characterBodyPrefix}SPECIAL_BOMB_NAME",
+                skillDescriptionToken = prefix + $"{Modules.StaticValues.characterBodyPrefix}SPECIAL_BOMB_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ThrowBomb)),
                 activationStateMachineName = "Slide",
@@ -210,7 +210,7 @@ namespace HenryMod.Modules.Survivors
             //uncomment this when you have a mastery skin
             /*
             //creating a new skindef as we did before
-            SkinDef masterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.DEVELOPER_PREFIX + "_HENRY_BODY_MASTERY_SKIN_NAME",
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.DEVELOPER_PREFIX + $"{Modules.StaticValues.characterBodyPrefix}MASTERY_SKIN_NAME",
                 Assets.mainAssetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,

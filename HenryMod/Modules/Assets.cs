@@ -25,18 +25,12 @@ namespace HenryMod.Modules
         internal static AssetBundle mainAssetBundle;
 
         // CHANGE THIS
-        private const string assetbundleName = "myassetbundle";
+        private const string assetbundleName = Modules.StaticValues.assetbundleName;
         //change this to your project's name if/when you've renamed it
         private const string csProjName = "HenryMod";
         
         internal static void Initialize()
         {
-            if (assetbundleName == "myassetbundle")
-            {
-                Log.Error("AssetBundle name hasn't been changed. not loading any assets to avoid conflicts");
-                return;
-            }
-
             LoadAssetBundle();
             LoadSoundbank();
             PopulateAssets();
@@ -63,7 +57,7 @@ namespace HenryMod.Modules
 
         internal static void LoadSoundbank()
         {
-            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.HenryBank.bnk"))
+            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.{Modules.StaticValues.soundBnkName}"))
             {
                 byte[] array = new byte[manifestResourceStream2.Length];
                 manifestResourceStream2.Read(array, 0, array.Length);
